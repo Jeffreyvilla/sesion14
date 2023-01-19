@@ -1,0 +1,30 @@
+
+  <div *ngIf="!!submitted">
+    <app-componente-hijo [formulario]="formulario"></app-componente-hijo>
+  </div>
+<div class="contenedor">
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <h1>Registro de Personas</h1>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Nombre" formControlName="name" minlength="10">
+    </div>
+    <div class="mb-3">
+      <label for="dni" class="form-label">DNI</label>
+      <input type="dni" class="form-control" id="dni" placeholder="Dni" formControlName="dni">
+    </div>
+    <div class="mb-3">
+      <label for="estado" class="form-label">Estado Civil</label>
+      <select formControlName="estado" class="form-select" aria-label="Default select example">
+        <option value="2">Elija una opción</option>
+        <option value="Soltero">Soltero</option>
+        <option value="Casado">Casado</option>
+        <option value="Divorciado">Divorciado</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-success" type="submit">Enviar</button>
+    </div>
+  </form>
+</div>
